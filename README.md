@@ -14,11 +14,11 @@ The github repository contains three folder  which are as follows :
 ## PART A
 In this folder there are 3 notebook files 
 
-`cs6910_assignment2_partA1_2_3.ipynb` for code related to Question 1,2,3 of assignment
+[cs6910_assignment2_partA_question1_2_3.ipynb](PART%20A/cs6910_assignment2_partA_question1_2_3.ipynb) for code related to Question 1,2,3 of assignment
 
-`cs6910_assignment2_partA4.ipynb` for code related to Question 4 of assignment
+[cs6910_assignment2_partA_question4.ipynb](PART%20A/cs6910_assignment2_partA_question4.ipynb) for code related to Question 4 of assignment
 
-`cs6910_assignment2_partA5.ipynb` for code related to Question 5 of assignment
+[cs6910_assignment2_partA_question5.ipynb](PART%20A/cs6910_assignment2_partA_question5.ipynb)  for code related to Question 5 of assignment
 
  
  
