@@ -24,10 +24,6 @@ cd PART C_OBJECT DETECTION
 ```
 python3 yolo.py --video-path='/path/to/video/'
 ```
-5) To infer real-time on webcam
-```
-python3 yolo.py
-```
 
 Note: This works considering you have the `weights` and `config` files at the yolov3-coco directory.
 <br/>
