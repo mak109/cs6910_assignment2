@@ -40,7 +40,6 @@ yolo.py --help
 ## Inference on Video
 
 (https://youtu.be/9U6GWO-uX2k)
-<small> Click on the image to Play the video on YouTube </small>
 
 
 ## References
