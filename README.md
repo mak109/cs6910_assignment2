@@ -1,4 +1,4 @@
-CS6910 ASSIGNMENT 2
+# CS6910 ASSIGNMENT 2
 
 The github repository contains three folder  which are as follows :
 1. Part A : Training from scratch
@@ -6,3 +6,7 @@ The github repository contains three folder  which are as follows :
 3. Part C : Using a pre-trained model as it is.
 
 The working is as follows :
+ 
+ 
+## PART C
+Go into the folder and follow the instructions given in the README file.
