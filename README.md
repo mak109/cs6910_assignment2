@@ -35,7 +35,21 @@ We would recommend to run the .ipynb file in google colab to get rid of the loca
 
 ####  Command Line Approach
 
-Download the .py file in your local system. Make sure your local system has all dependencies like tensorflow, wget, matplotlib etc. Keep in mind that if any of te dependencies are missing the code will not work and show package missing error.
+Download the .py file in your local system. Make sure your local system has all dependencies like tensorflow, wget, matplotlib etc. Keep in mind that if any of te dependencies are missing the code will not work and show package missing error.Run the below command to install the dependencies 
+
+```
+pip install wget
+```
+
+```
+pip install tensorflow
+```
+```
+pip install zipfile
+```
+
+After installing the dependencies run the below command for the assignments.
+
 ```
 python3 cs6910_assignment2_parta_question1_2_3.py
 ```
@@ -49,7 +63,37 @@ python3 cs6910_assignment2_parta_question5_guided_backprop.py
 ## PART B
 In this folder there is one notebook file and one.py file.
 
+ [cs6910_assignment2/PART B/cs6910_assignment2_partB_question1_2_3.ipynb](PART%20B/cs6910_assignment2_partB_question1_2_3.ipynb) Part B notebook code.
  
+ [cs6910_assignment2/PART B/cs6910_assignment2_partb_question1_2_3.py](PART%20B/cs6910_assignment2_partb_question1_2_3.py) Part B .py file for command line.
+ 
+ ### How to use
+ We have used two approaches for running the code
+ 
+ #### Jupyter Notebook Approach
+ Run the .pynb file on your local system or Google Colab. We recommend you to use Colab to remove the package dependecies. Run the code sequentially.
+ 
+ ### Command line approach
+ 
+ Install the following dependencies using the given below command.
+  ```
+  pip install wget
+  ```
+  ```
+  pip install zipfile
+  ```
+  
+  After running the above commands run the given below command to check the code -
+  ```
+  python3 cs6910_assignment2_partb_question1_2_3.py
+  ```
+  
+  If there are any problems while running the code in terminal kindly use the below command to check the manual
+  
+  ```
+  python3 -h
+  ```
+  
  
 ## PART C 
 This project implements video object detection classifier using pretrained yolov3 models. 
