@@ -18,7 +18,7 @@ In this folder there are 3 notebook(.ipynb) files and 3 .py files.
 
 [cs6910_assignment2_partA_question4.ipynb](PART%20A/cs6910_assignment2_partA_question4.ipynb) for code related to Question 4 of assignment
 
-[cs6910_assignment2_partA_question5.ipynb](PART%20A/cs6910_assignment2_partA_question5.ipynb)  for code related to Question 5 of assignment
+[cs6910_assignment2_partA_question5_guided_backprop.ipynb](PART%20A/cs6910_assignment2_partA_question5_guided_backprop.ipynb)  for code related to Question 5 of assignment
 
 [cs6910_assignment2_parta_question1_2_3.py](PART%20A/cs6910_assignment2_parta_question1_2_3.py) for code related to Question 1,2,3 in .py format for running through command line.
 
