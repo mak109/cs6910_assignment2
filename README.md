@@ -73,7 +73,7 @@ In this folder there is one notebook file and one.py file.
  #### Jupyter Notebook Approach
  Run the .pynb file on your local system or Google Colab. We recommend you to use Colab to remove the package dependecies. Run the code sequentially.
  
- ### Command line approach
+ #### Command line approach
  
  Install the following dependencies using the given below command.
   ```
