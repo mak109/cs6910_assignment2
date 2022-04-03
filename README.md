@@ -20,22 +20,90 @@ In this folder there are 3 notebook files and 3 .py files.
 
 [cs6910_assignment2_partA_question5.ipynb](PART%20A/cs6910_assignment2_partA_question5.ipynb)  for code related to Question 5 of assignment
 
-[cs6910_assignment2/PART A/cs6910_assignment2_parta_question1_2_3.py](PART%20A/cs6910_assignment2_parta_question1_2_3.py) for code related to Question 1,2,3 in .py format for running through command line.
+[cs6910_assignment2_parta_question1_2_3.py](PART%20A/cs6910_assignment2_parta_question1_2_3.py) for code related to Question 1,2,3 in .py format for running through command line.
 
-[cs6910_assignment2/PART A/cs6910_assignment2_parta_question4.py](PART%20A/cs6910_assignment2_parta_question4.py) for code related to Question 4 in .py format for running through coomand line.
+[cs6910_assignment2_parta_question4.py](PART%20A/cs6910_assignment2_parta_question4.py) for code related to Question 4 in .py format for running through coomand line.
 
-[cs6910_assignment2/PART A/cs6910_assignment2_parta_question5_guided_backprop.py](PART%20A/cs6910_assignment2_parta_question5_guided_backprop.py) for code related to Question 5 in .py format for running through command line.
+[cs6910_assignment2_parta_question5_guided_backprop.py](PART%20A/cs6910_assignment2_parta_question5_guided_backprop.py) for code related to Question 5 in .py format for running through command line.
 
 ### How to use 
 We have used two approaches - jupyter notebook approach and the command line approach
 
 #### Jupyter Notebook Approach
-Download the .ipynb files in your local systems or google colab. Dowload all the necessary dependencies- wget, tensorflow, matplotlib etc.
-We would recommend to run the .ipynb file in google colab to get rid of the local dependencies requirements.
+Download the **.ipynb** files in your local systems or google colab. Download all the necessary dependencies- wget, tensorflow, matplotlib etc.
+We would recommend to run the **.ipynb** file in google colab to get rid of the local dependencies requirements.
 
+For  running ```cs6910_assignment2_partA_question1_2_3.ipynb``` in jupyter notebook to test over multiple hyperparameter configuration pass a parameter to the ```train()``` function.
+The parameter is a dictionary and its format is shown below.
+```python
+    config = {
+    "kernel_sizes" : [(3,3),(3,3),(5,5),(3,3),(3,3)],
+    "activation" : 'relu',
+    "learning_rate": 1e-3,
+    "filters_list" : [32,32,64,64,128],
+    "dense_layer_size" : 128,
+    "batch_normalization": "True",
+    "data_augment": "False",
+    "weight_decay":0.0005,
+    "dropout":0.2,
+    "batch_size":64,
+    "epochs":3
+    }
+```
+Following are some hyperparameter configurations swept over by wandb
+```python
+ #Sweep configuration for runs
+sweep_config = {
+  "name" : "best-sweep",
+  "method" : "bayes",
+  "metric" : {
+      "name" : "val_accuracy",
+      "goal" : "maximize"
+  },
+  "parameters" : {
+    "epochs" : {
+      "values" : [10,20,30]
+    },
+    "learning_rate" :{
+      "values" : [1e-3,1e-4]
+    },
+    "kernel_sizes":{
+        "values" : [[(3,3),(3,3),(3,3),(3,3),(3,3)],
+                    [(3,3),(3,3),(5,5),(7,7),(7,7)],
+                    [(11,11),(11,11),(7,7),(5,5),(3,3)],
+                    [(3,3),(5,5),(7,7),(9,9),(11,11)],
+                    [(5,5),(5,5),(5,5),(5,5),(5,5)]]
+    },
+    "filters_list":{
+        "values" : [[32,32,32,32,32],[256,128,64,32,32],[32,64,64,128,128],[32,64,128,256,512],[64,32,64,32,64]]
+    },
+    "weight_decay":{
+      "values": [0,0.0005,0.005]  
+    },
+    "data_augment":{
+        "values": ["True","False"]
+    },
+    "batch_size":{
+        "values":[32,64]
+    },
+    "activation":{
+        "values": ["relu","elu","swish","gelu"]
+    },
+      "dropout":{
+          "values":[0.0,0.2,0.3]
+      },
+      "dense_layer_size":{
+          "values":[64,128,256,512]
+      },
+      "batch_normalization":{
+          "values":["True","False"]
+      }
+  }
+}
+```
 ####  Command Line Approach
 
-Download the .py file in your local system. Make sure your local system has all dependencies like tensorflow, wget, matplotlib etc. Keep in mind that if any of te dependencies are missing the code will not work and show package missing error.Run the below command to install the dependencies 
+Download the **.py** file in your local system. Make sure your local system has all dependencies like tensorflow, wget, matplotlib etc. Keep in mind that if any of te dependencies are missing the code will not work and show package missing error.Run the below command to install the dependencies 
 
 ```
 pip install wget
@@ -61,30 +129,35 @@ After that arguments can be passed like
 ```
 python3 cs6910_assignment2_parta_question1_2_3.py -e 30
 ```
-Will set the epoch to 30 all other hyperparameters are optional when not given will set to default in the help option all default values are displayed
-
+Will set the epoch to 30 all other hyperparameters are optional when not given will set to default.In the help option all default values of the hyperparameters are displayed.
 The above command will run the code and internally invoke the ```train()``` function and a plot of train accuracy validation accuracy and train loss ,validation loss will be saved as .jpg file in the default working directory which can be used for better visualisation.
 
-Note: Initially the iNaturalist dataset will be downloaded in current working directory so it may take some time depending on the internet speed.
+
 ```
 python3 cs6910_assignment2_parta_question4.py
 ```
+In this part no arguments need to be passed as the code internally download and use the best model which was found during wandb sweep **Bayes** search over hyperparameters during training . The test accuracy and test loss will be internally computed again on the same **iNaturalist** dataset which was used in previous part.
+Some image plots as mentioned in the Question 4  will be saved as .jpg file and can be viewed for evaluation.
 ```
 python3 cs6910_assignment2_parta_question5_guided_backprop.py
 ```
+This part is very similar to the previous one. 
 
 ## PART B
 In this folder there is one notebook file and one.py file.
 
- [cs6910_assignment2/PART B/cs6910_assignment2_partB_question1_2_3.ipynb](PART%20B/cs6910_assignment2_partB_question1_2_3.ipynb) Part B notebook code.
+ [cs6910_assignment2_partB_question1_2_3.ipynb](PART%20B/cs6910_assignment2_partB_question1_2_3.ipynb) Part B notebook code.
  
- [cs6910_assignment2/PART B/cs6910_assignment2_partb_question1_2_3.py](PART%20B/cs6910_assignment2_partb_question1_2_3.py) Part B .py file for command line.
+ [cs6910_assignment2_partb_question1_2_3.py](PART%20B/cs6910_assignment2_partb_question1_2_3.py) Part B .py file for command line.
  
  ### How to use
  We have used two approaches for running the code
  
  #### Jupyter Notebook Approach
- Run the .pynb file on your local system or Google Colab. We recommend you to use Colab to remove the package dependecies. Run the code sequentially.
+ Run the **.ipynb** file on your local system or Google Colab. We recommend you to use Colab to remove the package dependecies. Run the code sequentially.
+ 
+ For  running ```cs6910_assignment2_partB_question1_2_3.ipynb``` in jupyter notebook to test over multiple hyperparameter configuration pass a parameter to the ```train()``` function.
+The parameter is a dictionary and its format is shown below.
  
  #### Command line approach
  
@@ -107,6 +180,8 @@ In this folder there is one notebook file and one.py file.
   python3 -h
   ```
   
+  
+  **Note: Initially the iNaturalist dataset will be downloaded in current working directory so it may take some time depending on the internet speed. We recommend you to use the same working directory for the above 3 files to avoid redundant downloads**
  
 ## PART C 
 This project implements video object detection classifier using pretrained yolov3 models. 
