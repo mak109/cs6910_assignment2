@@ -291,9 +291,12 @@ yolo.py --help
 
 ## References
 
-1) Deep Learning lectures by Professor Mitesh Khapra, IIT Madras.
+1) [Deep Learning lectures by Professor Mitesh Khapra, IIT Madras.](https://youtube.com/playlist?list=PLEAYkSg4uSQ1r-2XrJ_GBzzS6I-f8yfRU)
 2) [PyImageSearch YOLOv3 Object Detection with OpenCV Blog](https://www.pyimagesearch.com/2018/11/12/yolo-object-detection-with-opencv/)
-3) [https://github.com/iArunava/YOLOv3-Object-Detection-with-OpenCV]
+3) [https://github.com/iArunava/YOLOv3-Object-Detection-with-OpenCV](https://github.com/iArunava/YOLOv3-Object-Detection-with-OpenCV)
+4) [https://www.tensorflow.org](https://www.tensorflow.org)
+5) [https://towardsdatascience.com/how-to-visually-explain-any-cnn-based-models-80e0975ce57](https://towardsdatascience.com/how-to-visually-explain-any-cnn-based-models-80e0975ce57)
+6) [https://matplotlib.org](https://matplotlib.org)
 
 ## License
 
