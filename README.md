@@ -53,6 +53,19 @@ After installing the dependencies run the below command for the assignments.
 ```
 python3 cs6910_assignment2_parta_question1_2_3.py
 ```
+The above command will run the code with default hyperparameter configuration to display the available options to pass as commandline arguments please enter the following command
+```
+python3 cs6910_assignment2_parta_question1_2_3.py -h
+```
+After that arguments can be passed like
+```
+python3 cs6910_assignment2_parta_question1_2_3.py -e 30
+```
+Will set the epoch to 30 all other hyperparameters are optional when not given will set to default in the help option all default values are displayed
+
+The above command will run the code and internally invoke the ```train()``` function and a plot of train accuracy validation accuracy and train loss ,validation loss will be saved as .jpg file in the default working directory which can be used for better visualisation.
+
+Note: Initially the iNaturalist dataset will be downloaded in current working directory so it may take some time depending on the internet speed.
 ```
 python3 cs6910_assignment2_parta_question4.py
 ```
