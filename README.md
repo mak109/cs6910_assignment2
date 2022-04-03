@@ -36,6 +36,15 @@ We would recommend to run the .ipynb file in google colab to get rid of the loca
 ####  Command Line Approach
 
 Download the .py file in your local system. Make sure your local system has all dependencies like tensorflow, wget, matplotlib etc. Keep in mind that if any of te dependencies are missing the code will not work and show package missing error.
+```
+python3 cs6910_assignment2_parta_question1_2_3.py
+```
+```
+python3 cs6910_assignment2_parta_question4.py
+```
+```
+python3 cs6910_assignment2_parta_question5_guided_backprop.py
+```
 
 ## PART B
 In this folder there is one notebook file and one.py file.
@@ -89,4 +98,4 @@ yolo.py --help
 
 ## License
 
-The code in this project is made by Amartya and Mayukh. 
+The code in this project is made by Amartya and Mayukh.
