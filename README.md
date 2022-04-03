@@ -20,16 +20,20 @@ In this folder there are 3 notebook files
 
 [cs6910_assignment2_partA_question5.ipynb](PART%20A/cs6910_assignment2_partA_question5.ipynb)  for code related to Question 5 of assignment
 
+### How to use 
+
+## PART B
+
  
 ## PART C 
 This project implements video object detection classifier using pretrained yolov3 models. 
 The yolov3 models are taken from the official yolov3 paper which was released in 2018. The yolov3 implementation is from [darknet](https://github.com/pjreddie/darknet). Also, this project implements an option to perform classification real-time using the webcam.
  
-## Problem Statement
+### Problem Statement
 
 We have heard news of various fire in appartments, office, colony etc. Most of the times the fire fighters are not able to distinguish between objects and humans in that environment. This happens mostly because of the smoke, dust etc. This can cause loss of human life in that scenario.
 
-## Our solution
+### Our solution
 
 We have used YoloV3 for object detection in such environments. Our code can properly identify humans, cars etc in those kind of environments. Since this just a basic work for this assignment. We hope that we will carry on our work so that it can properly identify humans in not only fire incidents but also in places like floods, eartquakes, landslides etc.
 
