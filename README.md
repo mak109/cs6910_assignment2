@@ -12,7 +12,7 @@ The github repository contains three folder  which are as follows :
 3. Part C : Using a pre-trained model as it is YOLOv3 object detection in realtime video
 
 ## PART A
-In this folder there are 3 notebook files and 3 .py files.
+In this folder there are 3 notebook(.ipynb) files and 3 .py files.
 
 [cs6910_assignment2_partA_question1_2_3.ipynb](PART%20A/cs6910_assignment2_partA_question1_2_3.ipynb) for code related to Question 1,2,3 of assignment
 
@@ -180,49 +180,37 @@ The parameter is a dictionary and its format is shown below.
  ```python
 #Sweep configuration for runs
 sweep_config = {
-  "name" : "best-sweep",
+  "name" : "best-sweep-for-pretrained-model",
   "method" : "bayes",
   "metric" : {
       "name" : "val_accuracy",
       "goal" : "maximize"
   },
+  
   "parameters" : {
-    "epochs" : {
-      "values" : [10,20,30]
-    },
-    "learning_rate" :{
+      "model" : {
+          "values" : ["InceptionV3", "InceptionResNetV2","Xception","ResNet50","MobileNetV2"]
+      },
+
+  "learning_rate" :{
       "values" : [1e-3,1e-4]
-    },
-    "kernel_sizes":{
-        "values" : [[(3,3),(3,3),(3,3),(3,3),(3,3)],
-                    [(3,3),(3,3),(5,5),(7,7),(7,7)],
-                    [(11,11),(11,11),(7,7),(5,5),(3,3)],
-                    [(3,3),(5,5),(7,7),(9,9),(11,11)]]
-    },
-    "filters_list":{
-        "values" : [[32,32,32,32,32],[256,128,64,32,32],[32,64,64,128,128],[32,64,128,256,512]]
-    },
-    "weight_decay":{
-      "values": [0,0.0005,0.005]  
-    },
-    "data_augment":{
-        "values": ["True","False"]
-    },
-    "batch_size":{
-        "values":[32,64]
-    },
-    "activation":{
-        "values": ["relu","elu","swish"]
-    },
-      "dropout":{
-          "values":[0.0,0.2,0.3]
-      },
-      "dense_layer_size":{
-          "values":[64,128,256,512]
-      },
-      "batch_normalization":{
-          "values":["True","False"]
-      }
+  },
+  "data_augment" : {
+      "values" : ["True","False"]
+  },
+  "dropout" : {
+      "values" : [0.2,0.3,0.4]
+  },
+
+  "batch_size" : {
+      "values" : [32,64]
+  },
+  "fine_tune_last" : {
+  "values" : [0,10,20,30]
+  },
+    "epochs" : {
+      "values" : [5,10,15,20]
+    }
   }
 }
  ```
@@ -241,7 +229,18 @@ sweep_config = {
   ```
   python3 cs6910_assignment2_partb_question1_2_3.py
   ```
-  
+  The above command will run the code with default hyperparameter configuration. To display the available options to pass as commandline arguments please enter the following command
+```
+python3 cs6910_assignment2_partb_question1_2_3.py -h
+```
+After that arguments can be passed like
+```
+python3 cs6910_assignment2_parta_question1_2_3.py -e 30 -m InceptionResNetV2
+```
+Will set the epochs to 30 and model to InceptionResNetV2 for training and  all other hyperparameters are optional when not given will set to default.In the help option all default values of the hyperparameters are displayed.
+The above command will run the code and internally invoke the ```train()``` function and a plot of train accuracy validation accuracy and train loss ,validation loss will be saved as .jpg file in the default working directory which can be used for better visualisation.
+Test accuracy over test dataset is also calculated and displayed.
+
   If there are any problems while running the code in terminal kindly use the below command to check the manual
   
   ```
