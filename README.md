@@ -12,7 +12,7 @@ The github repository contains three folder  which are as follows :
 3. Part C : Using a pre-trained model as it is YOLOv3 object detection in realtime video
 
 ## PART A
-In this folder there are 3 notebook files 
+In this folder there are 3 notebook files and 3 .py files.
 
 [cs6910_assignment2_partA_question1_2_3.ipynb](PART%20A/cs6910_assignment2_partA_question1_2_3.ipynb) for code related to Question 1,2,3 of assignment
 
@@ -20,10 +20,27 @@ In this folder there are 3 notebook files
 
 [cs6910_assignment2_partA_question5.ipynb](PART%20A/cs6910_assignment2_partA_question5.ipynb)  for code related to Question 5 of assignment
 
+[cs6910_assignment2/PART A/cs6910_assignment2_parta_question1_2_3.py](PART%20A/cs6910_assignment2_parta_question1_2_3.py) for code related to Question 1,2,3 in .py format for running through command line.
+
+[cs6910_assignment2/PART A/cs6910_assignment2_parta_question4.py](PART%20A/cs6910_assignment2_parta_question4.py) for code related to Question 4 in .py format for running through coomand line.
+
+[cs6910_assignment2/PART A/cs6910_assignment2_parta_question5_guided_backprop.py](PART%20A/cs6910_assignment2_parta_question5_guided_backprop.py) for code related to Question 5 in .py format for running through command line.
+
 ### How to use 
+We have used two approaches - jupyter notebook approach and the command line approach
+
+#### Jupyter Notebook Approach
+Download the .ipynb files in your local systems or google colab. Dowload all the necessary dependencies- wget, tensorflow, matplotlib etc.
+We would recommend to run the .ipynb file in google colab to get rid of the local dependencies requirements.
+
+####  Command Line Approach
+
+Download the .py file in your local system. Make sure your local system has all dependencies like tensorflow, wget, matplotlib etc. Keep in mind that if any of te dependencies are missing the code will not work and show package missing error.
 
 ## PART B
+In this folder there is one notebook file and one.py file.
 
+ 
  
 ## PART C 
 This project implements video object detection classifier using pretrained yolov3 models. 
@@ -37,7 +54,7 @@ We have heard news of various fire in appartments, office, colony etc. Most of t
 
 We have used YoloV3 for object detection in such environments. Our code can properly identify humans, cars etc in those kind of environments. Since this just a basic work for this assignment. We hope that we will carry on our work so that it can properly identify humans in not only fire incidents but also in places like floods, eartquakes, landslides etc.
 
-## How to use?
+### How to use?
 
 1) Download the folder
 
@@ -59,7 +76,7 @@ yolo.py --help
 ```
 
 
-## Inference on Video
+### Inference on Video
 
 (https://youtu.be/9U6GWO-uX2k)
 
