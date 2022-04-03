@@ -33,7 +33,10 @@ We have used two approaches - jupyter notebook approach and the command line app
 Download the **.ipynb** files in your local systems or google colab. Download all the necessary dependencies- wget, tensorflow, matplotlib etc.
 We would recommend to run the **.ipynb** file in google colab to get rid of the local dependencies requirements.
 
-For  running ```cs6910_assignment2_partA_question1_2_3.ipynb``` in jupyter notebook to test over multiple hyperparameter configuration pass a parameter to the ```train()``` function.
+For  running ```cs6910_assignment2_partA_question1_2_3.ipynb``` in jupyter notebook to test over multiple hyperparameter configuration pass a parameter 
+
+to the ```train()``` function.
+
 The parameter is a dictionary and its format is shown below.
 ```python
     config = {
@@ -156,8 +159,73 @@ In this folder there is one notebook file and one.py file.
  #### Jupyter Notebook Approach
  Run the **.ipynb** file on your local system or Google Colab. We recommend you to use Colab to remove the package dependecies. Run the code sequentially.
  
- For  running ```cs6910_assignment2_partB_question1_2_3.ipynb``` in jupyter notebook to test over multiple hyperparameter configuration pass a parameter to the ```train()``` function.
+ For  running ```cs6910_assignment2_partB_question1_2_3.ipynb``` in jupyter notebook to test over multiple hyperparameter configuration pass a parameter
+ 
+ to the ```train()``` function.
+ 
 The parameter is a dictionary and its format is shown below.
+
+```python
+    config = {
+    "model": 'InceptionV3',
+    "learning_rate": 1e-4,
+    "data_augment": "True",
+    "dropout":0.2,
+    "batch_size":32,
+    "fine_tune_last":20,
+    "epochs":3
+    }
+ ```
+ Following are some hyperparameter configurations swept over by wandb
+ ```python
+#Sweep configuration for runs
+sweep_config = {
+  "name" : "best-sweep",
+  "method" : "bayes",
+  "metric" : {
+      "name" : "val_accuracy",
+      "goal" : "maximize"
+  },
+  "parameters" : {
+    "epochs" : {
+      "values" : [10,20,30]
+    },
+    "learning_rate" :{
+      "values" : [1e-3,1e-4]
+    },
+    "kernel_sizes":{
+        "values" : [[(3,3),(3,3),(3,3),(3,3),(3,3)],
+                    [(3,3),(3,3),(5,5),(7,7),(7,7)],
+                    [(11,11),(11,11),(7,7),(5,5),(3,3)],
+                    [(3,3),(5,5),(7,7),(9,9),(11,11)]]
+    },
+    "filters_list":{
+        "values" : [[32,32,32,32,32],[256,128,64,32,32],[32,64,64,128,128],[32,64,128,256,512]]
+    },
+    "weight_decay":{
+      "values": [0,0.0005,0.005]  
+    },
+    "data_augment":{
+        "values": ["True","False"]
+    },
+    "batch_size":{
+        "values":[32,64]
+    },
+    "activation":{
+        "values": ["relu","elu","swish"]
+    },
+      "dropout":{
+          "values":[0.0,0.2,0.3]
+      },
+      "dense_layer_size":{
+          "values":[64,128,256,512]
+      },
+      "batch_normalization":{
+          "values":["True","False"]
+      }
+  }
+}
+ ```
  
  #### Command line approach
  
